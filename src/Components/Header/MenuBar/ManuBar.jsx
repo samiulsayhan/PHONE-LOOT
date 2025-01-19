@@ -8,7 +8,7 @@ const menuBar = [
 
 const ManuBar = () => {
   return (
-    <div className="flex justify-center bg-white shadow-md">
+    <div className="flex justify-center bg-white shadow-md ">
       {/* from here manubar */}
       <div>
         <div className="w-[700px] py-2">
