@@ -8,14 +8,14 @@ const CatagoryCart = ({ phone }) => {
   const text =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing elit.";
   return (
-    <div>
+    <div className="flex justify-center ">
       {/* daisy ui card */}
-      <div className=" bg-base-100  hover:drop-shadow-lg shadow-red-700 mb-3 mx-2  p-2 rounded-sm">
+      <div className="inline-block bg-base-100  hover:drop-shadow-lg  shadow-black mb-3 mx-2 p-2 rounded-sm">
         <div className="flex justify-center">
           <img className="h-40 " src={phone.image} alt="Shoes" />
         </div>
 
-        <div className="p-2 font-medium w-38">
+        <div className="  p-2 font-medium w-38">
           <p>{phone.phone_name}</p>
           <p className="text-sm font-normal">{truncateText(text, 40)}</p>
           <div className="flex gap-3 items-center">

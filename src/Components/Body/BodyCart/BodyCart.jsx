@@ -15,13 +15,13 @@ const BodyCart = () => {
       console.log(phones);
 
   return (
-    <div className="m-auto container my-10">
+    <div id="devices" className="m-auto container my-10">
         <div>
             <div className="mt-5 mb-3">
                 <h2 className="text-3xl font-semibold">Just For You</h2>
             </div>
             {/* cart delploy from here */}
-            <div className="grid grid-cols-6">
+            <div className="grid justify-between grid-cols-1 md:grid-cols-3 lg:grid-cols-6">
                 {
                     phones.map((phone, index)=>(
                         <FullCart key={index} phone={phone} ></FullCart>
