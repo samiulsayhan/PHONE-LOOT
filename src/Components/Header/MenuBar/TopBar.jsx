@@ -22,8 +22,8 @@ const TopBar = () => {
 
 
   return (
-    <div  id='home' className="bg-base-100 ">
-      <div className=" flex items-center  min-h-16 justify-between container m-auto">
+    <div  id='home' className=" fixed z-50 top-0 left-0 right-0 bg-green-400 ">
+      <div className="  flex items-center  min-h-16 justify-between container m-auto">
         <div className="items-center flex">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

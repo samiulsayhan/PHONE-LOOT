@@ -3,6 +3,7 @@ import Hero from "./Components/Body/Hero/Hero";
 // import FetchCheck from "./Components/FetchCheck/FetchCheck";
 import TopBar from "./Components/Header/MenuBar/TopBar";
 
+
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
         <Hero></Hero>
         {/* <FetchCheck></FetchCheck> */}
         <BodyCart></BodyCart>
+        
       </div>
     </>
   );

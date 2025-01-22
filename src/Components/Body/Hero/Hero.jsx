@@ -7,8 +7,14 @@ import Img4 from "../../../assets/Hero/gadget.jpg";
 import Cart from "../Cart/Cart";
 import { useState } from "react";
 import { FaAngleDoubleUp } from "react-icons/fa";
-
 import CatagoryCart from "../../CatagoryCart/CatagoryCart";
+// import from here to down only for auto slide
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "./styles.css";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Hero = () => {
   const [phones, setPhones] = useState([]);
@@ -25,83 +31,44 @@ const Hero = () => {
   const handleScroll = () => {
     const section = document.getElementById("home");
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
+      section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
     }
   };
 
   return (
-    <div  className="  m-auto container my-10 ">
+    <div className="  m-auto container py-24 ">
       {/* hero slider */}
-      <div className="carousel w-full flex">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src={Img1} className="w-full" />
-          <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a
-              href="#slide4"
-              className="rounded-r-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❮
-            </a>
-            <a
-              href="#slide2"
-              className="rounded-l-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src={Img2} className="w-full" />
-          <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a
-              href="#slide1"
-              className="rounded-r-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❮
-            </a>
-            <a
-              href="#slide3"
-              className="rounded-l-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src={Img3} className="w-full" />
-          <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a
-              href="#slide2"
-              className="rounded-r-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❮
-            </a>
-            <a
-              href="#slide4"
-              className="rounded-l-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src={Img4} className="w-full" />
-          <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a
-              href="#slide3"
-              className="rounded-r-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❮
-            </a>
-            <a
-              href="#slide1"
-              className="rounded-l-xl hover:bg-opacity-25 hover:bg-slate-600 p-2 text-white"
-            >
-              ❯
-            </a>
-          </div>
-        </div>
+      <div className="container m-auto">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src={Img1} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Img2} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Img3} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Img4} alt="" />
+          </SwiperSlide>
+        </Swiper>
       </div>
+
+      {/* flash sell text */}
       <div className="flex justify-center mt-10 mb-10">
         <h2 className="lg:text-5xl md:text-3xl text-2xl font-bold">
           Flash Sell Going On
@@ -126,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* catagory section  */}
-      <div id="catagory"> 
+      <div id="catagory">
         <div className="mt-5 mb-3">
           <h2 className="text-3xl font-semibold">Catagories</h2>
         </div>

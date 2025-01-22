@@ -1,47 +1,47 @@
 
+import Img1 from "../../assets/Hero/devices.jpg";
+import Img2 from "../../assets/Hero/discount.jpg";
+import Img3 from "../../assets/Hero/flashSell.jpg";
+import Img4 from "../../assets/Hero/gadget.jpg";
 
-const PhoneList = () => {
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import './styles.css'
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+export default function App() {
   return (
-    <div>
-      <div className="bg-orange-200  ">
-        <div className="container m-auto py-2">
-          <div className="flex justify-between items-center">
-            {/* logo */}
-            <div>
-              <a href="#" className="text-3xl flex gap-2 font-bold">
-                <img src={""} alt="Logo" className="w-10 " />
-                Phone-Loot
-              </a>
-            </div>
-            <div>
-              {/* menu bar */}
-              
-            </div> 
-           
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
 
-            {/* search and carts */}
-            <div className="flex justify-between gap-3 items-center">
-              <div className="relative">
-                <input
-                  id="search-field"
-                  type="text"
-                  className="rounded-full border outline-none w-[300px] py-1 px-6 "
-                />
-                {/* <IoMdSearch */}
-                  {/* // onClick={handleSearch} */}
-                  {/* className="absolute top-1/4 right-2 text-lg hover:text-orange-500" */}
-                {/* /> */}
-              </div>
-              <button className="items-center bg-gradient-to-r from-orange-400 to bg-orange-500 px-2 rounded-md text-white ">
-                {/* <IoMdCart className="text-3xl" /> */}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <SwiperSlide><img src={Img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={Img2} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={Img3} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={Img4} alt="" /></SwiperSlide>
+      
+      </Swiper>
+    </>
   );
-};
-
-export default PhoneList;
+}
