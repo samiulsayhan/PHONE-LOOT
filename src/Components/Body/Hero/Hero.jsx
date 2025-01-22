@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "./styles.css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
+
 const Hero = () => {
   const [phones, setPhones] = useState([]);
 
@@ -29,14 +30,14 @@ const Hero = () => {
 
   // scroll handle
   const handleScroll = () => {
-    const section = document.getElementById("home");
+    const section = document.getElementById('home');
     if (section) {
       section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
     }
-  };
+  }
 
   return (
-    <div className="  m-auto container py-24 ">
+    <div  className="  m-auto container py-10 ">
       {/* hero slider */}
       <div className="container m-auto">
         <Swiper

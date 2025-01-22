@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import MenuBar from "../MenuBar/ManuBar";
 import { MdMenu } from "react-icons/md";
-import SmoothScroll from 'smooth-scroll';
+import SmoothScroll from "smooth-scroll";
 
 // menubar objects json
 const menuBar = [
@@ -20,37 +20,41 @@ const TopBar = () => {
     speedAsDuration: true,
   });
 
-
   return (
-    <div  id='home' className=" fixed z-50 top-0 left-0 right-0 bg-green-400 ">
-      <div className="  flex items-center  min-h-16 justify-between container m-auto">
-        <div className="items-center flex">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <MdMenu className="text-xl" />
+    <div id="home" >
+      <div className=" bg-orange-200 ">
+        <div className="  flex items-center  min-h-16 justify-between container m-auto">
+          <div className="items-center flex">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                <MdMenu className="text-xl" />
+              </div>
+              <ul
+                tabIndex={0}
+                className=" dropdown-content bg-base-100 rounded-sm z-[1] mt-2 w-32 p-2  shadow"
+              >
+                {menuBar.map((i) => (
+                  <a key={i.id} href={i.href}>
+                    <li className="text-gray-700 hover:text-black py-1">
+                      {i.label}
+                    </li>
+                  </a>
+                ))}
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className=" dropdown-content bg-base-100 rounded-sm z-[1] mt-2 w-32 p-2  shadow"
-            >
-              {menuBar.map((i) => (
-                <a key={i.id} href={i.href}>
-                  <li  className="text-gray-700 hover:text-black py-1">
-                    {i.label}
-                  </li>
-                </a>
-              ))}
-            </ul>
+            <img className="w-10" src={Logo} alt="" />
           </div>
-          <img className="w-10" src={Logo} alt="" />
-        </div>
 
-        <div className=" hidden lg:flex">
-          {/* this is the part which will hide in small screen */}
+          <div className=" hidden lg:flex">
+            {/* this is the part which will hide in small screen */}
 
-          <MenuBar></MenuBar>
+            <MenuBar></MenuBar>
 
-          {/* <ul className="menu menu-horizontal px-1">
+            {/* <ul className="menu menu-horizontal px-1">
             <li>
               <a>Item 1</a>
             </li>
@@ -61,25 +65,26 @@ const TopBar = () => {
               <a>Item 3</a>
             </li>
           </ul> */}
-        </div>
+          </div>
 
-        {/* search and button area  */}
-        <div className="">
-          <div className="flex justify-between gap-3 items-center">
-            <div className="relative">
-              <input
-                id="search-field"
-                type="text"
-                className="rounded-full border outline-none w-[150px] md:w-[200px] lg:w-[300px] py-1 px-6 "
-              />
-              <IoMdSearch
-                // onClick={handleSearch}
-                className="absolute top-1/4 right-2 text-lg hover:text-orange-500"
-              />
+          {/* search and button area  */}
+          <div className="">
+            <div className="flex justify-between gap-3 items-center">
+              <div className="relative">
+                <input
+                  id="search-field"
+                  type="text"
+                  className="rounded-full border outline-none w-[150px] md:w-[200px] lg:w-[300px] py-1 px-6 "
+                />
+                <IoMdSearch
+                  // onClick={handleSearch}
+                  className="absolute top-1/4 right-2 text-lg hover:text-orange-500"
+                />
+              </div>
+              <button className="items-center bg-gradient-to-r from-orange-400 to bg-orange-500 px-2 rounded-md text-white ">
+                <IoMdCart className="text-3xl" />
+              </button>
             </div>
-            <button className="items-center bg-gradient-to-r from-orange-400 to bg-orange-500 px-2 rounded-md text-white ">
-              <IoMdCart className="text-3xl" />
-            </button>
           </div>
         </div>
       </div>
